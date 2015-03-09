@@ -1,7 +1,11 @@
 class PagesController < ApplicationController
+  # before_action :authenticate
 
   def index
-    raise AccessDenied
+    if current_user
+    else
+      raise NotLogged
+    end
   end
 
 end
